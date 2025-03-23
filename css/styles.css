@@ -12,7 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh; /* Assicura che occupi l'intera altezza della finestra */
+    height: 100vh;
+    /* Assicura che occupi l'intera altezza della finestra */
     padding: 2rem;
 }
 
@@ -22,7 +23,8 @@ body {
 }
 
 #frontespizio div img:hover {
-    transform: scale(1.1); /* Effetto hover per ingrandire leggermente i loghi */
+    transform: scale(1.1);
+    /* Effetto hover per ingrandire leggermente i loghi */
 }
 
 #frontespizio h1 {
@@ -44,17 +46,27 @@ body {
 }
 
 header {
-    position: fixed; /* Fissa la navbar in alto */
-    top: 0; /* Posiziona la navbar in cima alla pagina */
+    position: fixed;
+    /* Fissa la navbar in alto */
+    top: 0;
+    /* Posiziona la navbar in cima alla pagina */
     left: 0;
-    width: 100%; /* Assicura che la navbar occupi tutta la larghezza */
-    background: #333; /* Colore di sfondo */
-    color: #fff; /* Colore del testo */
-    padding: 1rem; /* Spaziatura interna */
-    z-index: 1000; /* Assicura che la navbar sia sopra gli altri elementi */
-    display: flex; /* Per allineare gli elementi su una riga */
-    justify-content: space-between; /* Spaziatura tra titolo e menu */
-    align-items: center; /* Allineamento verticale */
+    width: 100%;
+    /* Assicura che la navbar occupi tutta la larghezza */
+    background: #333;
+    /* Colore di sfondo */
+    color: #fff;
+    /* Colore del testo */
+    padding: 1rem;
+    /* Spaziatura interna */
+    z-index: 1000;
+    /* Assicura che la navbar sia sopra gli altri elementi */
+    display: flex;
+    /* Per allineare gli elementi su una riga */
+    justify-content: space-between;
+    /* Spaziatura tra titolo e menu */
+    align-items: center;
+    /* Allineamento verticale */
 }
 
 header nav ul {
@@ -90,7 +102,16 @@ footer {
     font-size: 5rem;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     position: relative;
     animation: glitch 1s infinite;
+}
+
+code {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-family: monospace;
+    color: #333;
 }
