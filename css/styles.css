@@ -115,3 +115,14 @@ code {
     font-family: monospace;
     color: #333;
 }
+
+#dataset {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#dataset img {
+    max-width: 300px;
+    border-radius: 10px;
+}
