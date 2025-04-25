@@ -77,64 +77,60 @@
   </header>
 
   <section id="contest">
-    <h2>Contest</h2>
-    <p>
-      Sign language recognition represents a formidable challenge in computer
-      vision due to the complex spatiotemporal dynamics of gestures and the
-      need for precise segmentation in continuous video streams. Many current
-      methods struggle with reliably partitioning continuous signing into
-      individual glosses or mapping these segments into text. In this contest,
-      participants will leverage a novel isolated Italian Sign Language
-      dataset to train robust models. In isolated sign language recognition,
-      each sign is presented individually, without context, similar to
-      flashcards used for learning new words in spoken language. In contrast,
-      continuous sign language recognition mirrors real-life communication,
-      where signs transition seamlessly from one to the next, forming
-      structured expressions much like spoken sentences. The IsoSign Contest
-      is a competition among methods for sign language recognition using
-      transfer learning. For the contest, we propose the use of a novel
-      training set, IsoSignLanguage Dataset, completely annotated with
-      corresponding transcription and glossary. The performance of the
-      competing methods will be evaluated in terms of accuracy on a private
-      test set composed by images that are different from the ones available
-      in the training set, in fact the objective is to transfer learning from
-      isolated training data to continuous test data.
-    </p>
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2>Contest</h2>
+      <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px; height: fit-content;">
+        <div style="flex: 1; min-width: 60%;">
+          <p>
+            Sign language recognition represents a formidable challenge in computer
+            vision due to the complex spatiotemporal dynamics of gestures and the
+            need for precise segmentation in continuous video streams. Many current
+            methods struggle with reliably partitioning continuous signing into
+            individual glosses or mapping these segments into text. In this contest,
+            participants will leverage a novel isolated Italian Sign Language
+            dataset to train robust models. In isolated sign language recognition,
+            each sign is presented individually, without context, similar to
+            flashcards used for learning new words in spoken language. In contrast,
+            continuous sign language recognition mirrors real-life communication,
+            where signs transition seamlessly from one to the next, forming
+            structured expressions much like spoken sentences. The IsoSign Contest
+            is a competition among methods for sign language recognition using
+            transfer learning. For the contest, we propose the use of a novel
+            training set, IsoSignLanguage Dataset, completely annotated with
+            corresponding transcription and glossary. The performance of the
+            competing methods will be evaluated in terms of accuracy on a private
+            test set composed by images that are different from the ones available
+            in the training set, in fact the objective is to transfer learning from
+            isolated training data to continuous test data.
+          </p>
+        </div>
+        <div style="flex: 1; min-width: 30%; display: flex; align-items: flex-start; justify-content: center;">
+          <img src="img/test_grid.png" alt="Test Dataset Example" style="width: 75%; height: auto;">
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="dataset">
-    <img src="img/dataset/dataset_example.jpg" alt="Dataset Example" style="max-width: 300px; border-radius: 10px;" />
-    <div>
+    <div style="max-width: 1400px; margin: 0 auto;">
       <h2>Dataset</h2>
-      <p>The IsolatedLIS Dataset consists of 16,856 videos about signer of italian language annotated with the following
-        labels:</p>
-      <ul>
-        <li>
-          Text: the associated word in Italian Sign Language (LIS).
-        </li>
-        <li>
-          Category: the category of the word (e.g., sport-tempo-libero, linuga, baby-sign, etc.)
-        </li>
-        <li>
-          Gloss: the gloss of the word in Italian, create by semisupervised method.
-        </li>
-        <li>
-          Frame_count: the number of frames in the video.
-        </li>
-        <li>
-          Video_Path: the path of the video.
-        </li>
-      </ul>
-      <p>Since the images are collected in different conditions, the dataset is heterogeneous in terms of size,
-        illumination, pose of the person, distance from the camera. Each image of the dataset contains a single person.
-        We make available to the partecipants tow folders with the traning and validation videos and a json file for
-        each set with the labels of the samples.
-      </p>
-      <p>Since the goal of this contest is the development of the research on pedestrian attributes recognition, we
-        encourage participants to use other samples or to add missing labels for training their models, if such
-        additional samples and annotations are made publicly available. The diffusion of samples annotated with
-        pedestrian attributes would make a great contribution to the development of this line of research and to the
-        realization of real applications in this field.</p>
+      <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px;">
+        <div style="flex: 2; min-width: 60%;">
+          <p>The IsolatedLIS Dataset consists of 16,856 videos about signer of Italian language annotated with the following labels:</p>
+          <ul>
+            <li>Text: the associated word in Italian Sign Language (LIS).</li>
+            <li>Category: the category of the word (e.g., sport-tempo-libero, lingua, baby-sign, etc.)</li>
+            <li>Gloss: the gloss of the word in Italian, created by a semi-supervised method.</li>
+            <li>Frame_count: the number of frames in the video.</li>
+            <li>Video_Path: the path of the video.</li>
+          </ul>
+          <p>Since the images are collected in different conditions, the dataset is heterogeneous in terms of size, illumination, pose of the person, and distance from the camera. Each image of the dataset contains a single person. We make available to the participants two folders with the training and validation videos and a JSON file for each set with the labels of the samples.</p>
+          <p>Since the goal of this contest is the development of research on pedestrian attributes recognition, we encourage participants to use other samples or to add missing labels for training their models, if such additional samples and annotations are made publicly available. The diffusion of samples annotated with pedestrian attributes would make a great contribution to the development of this line of research and to the realization of real applications in this field.</p>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 30%; display: flex; align-items: flex-start; justify-content: center;">
+        <img src="img/train_set.png" alt="Training Dataset Examples" style="max-width: 90%; height: auto;">
+      </div>
     </div>
   </section>
 
@@ -148,7 +144,7 @@
     <ol>
       <li>
         The deadline for the submission of the methods is
-        <strong>22th June, 2025</strong>. The submission must be done with an
+        <strong>30th June, 2025</strong>. The submission must be done with an
         email in which the participants share (directly or with external
         links) the trained model, the code, and the report. Please follow the
         detailed instructions reported <a href="#istruzioni">here</a>.
