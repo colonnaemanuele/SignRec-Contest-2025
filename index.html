@@ -4,8 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IsoSign Contest CAIP 2025</title>
+  <title>SignRec Contest CAIP 2025</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        displayAlign: "center"
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML" async></script>
+
 </head>
 
 <body>
@@ -24,8 +32,8 @@
       <a href="https://caip2025.com" target="_blank">
         <img src="img/loghi/caip/LOGO-CAIP-2025.png" alt="Logo CAIP" style="height: 50px" /></a>
     </div>
-    <h1 class="glitch-text" data-text="IsoSign Contest 2025">
-      IsoSign Contest 2025
+    <h1 class="glitch-text" data-text="SignRec Contest 2025">
+      SignRec Contest 2025
     </h1>
     <h2 style="color: #fff; font-size: 1.5rem; margin-top: 1rem">
       21th International Conference on Computer Analysis of Images and Patterns - CAIP 2025
@@ -48,7 +56,7 @@
         color: #fff;
         padding: 1rem;
       ">
-    <h1 style="margin: 0">IsoSign Contest 2025</h1>
+    <h1 style="margin: 0">SignRec Contest 2025</h1>
     <nav>
       <ul style="list-style: none; display: flex; margin: 0; padding: 0">
         <li style="margin-right: 10px">
@@ -93,10 +101,10 @@
             flashcards used for learning new words in spoken language. In contrast,
             continuous sign language recognition mirrors real-life communication,
             where signs transition seamlessly from one to the next, forming
-            structured expressions much like spoken sentences. The IsoSign Contest
+            structured expressions much like spoken sentences. The SignRec Contest
             is a competition among methods for sign language recognition using
             transfer learning. For the contest, we propose the use of a novel
-            training set, IsoSignLanguage Dataset, completely annotated with
+            training set, Sign Rec Language Dataset, completely annotated with
             corresponding transcription and glossary. The performance of the
             competing methods will be evaluated in terms of accuracy on a private
             test set composed by images that are different from the ones available
@@ -133,36 +141,55 @@
       </div>
     </div>
   </section>
-
   <section id="protocollo">
-    <h2>Evaluation Protocol</h2>
-    <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest 2025 employs multiple evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate different aspects of model performance.</p>
-  
-    <h3>Word Error Rate (WER)</h3>
-    <p>Word Error Rate is the primary evaluation metric, quantifying the accuracy of the recognized sign sequences compared to the ground truth annotations. It is computed as:</p>
-    <p><code>WER = (S + D + I) / N = (S + D + I) / (S + D + C)</code></p>
-    <ul>
-      <li><strong>S</strong>: Number of substitutions (incorrectly recognized signs).</li>
-      <li><strong>D</strong>: Number of deletions (missed signs).</li>
-      <li><strong>I</strong>: Number of insertions (extra signs detected).</li>
-      <li><strong>C</strong>: Number of correctly recognized signs.</li>
-      <li><strong>N</strong>: Total number of signs in the ground truth sentence (<code>N = S + D + C</code>).</li>
-    </ul>
-    <p>Lower WER values indicate better recognition performance, as fewer errors are introduced in the predicted sign sequences.</p>
-  
-    <h3>Sign Accuracy (SA)</h3>
-    <p>Sign Accuracy measures the percentage of correctly predicted signs within a sequence, providing a complementary metric to WER. It is defined as:</p>
-    <p><code>SA = (C / N) × 100</code></p>
-    <p>Here, <strong>C</strong> represents the number of correctly predicted signs. Unlike WER, SA does not penalize insertions, making it helpful in evaluating raw recognition accuracy.</p>
-  
-    <h3>Boundary Segmentation Score (BSS)</h3>
-    <p>To assess the ability of models to segment continuous signing into discrete glosses, we introduce the Boundary Segmentation Score (BSS), which measures the alignment of predicted sign boundaries with ground truth annotations. It is calculated based on precision and recall, evaluating how well the system detects the start and end points of individual signs in continuous sequences:</p>
-    <p><code>BSS = (2 × P × R) / (P + R)</code></p>
-    <ul>
-      <li><strong>Precision (P)</strong>: Measures how many predicted boundaries are correct.</li>
-      <li><strong>Recall (R)</strong>: Measures how many actual boundaries were correctly detected.</li>
-    </ul>
-    <p>A higher BSS indicates better temporal segmentation performance, critical for accurate continuous sign recognition.</p>
+      <h2>Evaluation Protocol</h2>
+      <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest 2025 employs multiple evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate different aspects of model performance.</p>
+      
+      <h3>Word Error Rate (WER)</h3>
+      <p>Word Error Rate is the primary evaluation metric, quantifying the accuracy of the recognized sign sequences compared to the ground truth annotations. It is computed as:</p>
+      
+      <div class="formula">
+        $$\text{WER} = \frac{S + D + I}{N} = \frac{S + D + I}{S + D + C}$$
+      </div>
+      
+      <div class="definition">
+        <p>Where:</p>
+        <ul>
+            <li><strong>$S$</strong>: Number of substitutions (incorrectly recognized signs).</li>
+            <li><strong>$D$</strong>: Number of deletions (missed signs).</li>
+            <li><strong>$I$</strong>: Number of insertions (extra signs detected).</li>
+            <li><strong>$C$</strong>: Number of correctly recognized signs.</li>
+            <li><strong>$N$</strong>: Total number of signs in the ground truth sentence ($N = S + D + C$).</li>
+        </ul>
+      </div>
+        
+      <p>Lower WER values indicate better recognition performance, as fewer errors are introduced in the predicted sign sequences.</p>
+      
+      <h3>Sign Accuracy (SA)</h3>
+      <p>Sign Accuracy measures the percentage of correctly predicted signs within a sequence, providing a complementary metric to WER. It is defined as:</p>
+      
+      <div class="formula">
+        $$\text{SA} = \frac{C}{N} \times 100\%$$
+      </div>
+      
+      <p>Here, <strong>$C$</strong> represents the number of correctly predicted signs. Unlike WER, SA does not penalize insertions, making it helpful in evaluating raw recognition accuracy.</p>
+      
+      <h3>Boundary Segmentation Score (BSS)</h3>
+      <p>To assess the ability of models to segment continuous signing into discrete glosses, we introduce the Boundary Segmentation Score (BSS), which measures the alignment of predicted sign boundaries with ground truth annotations. It is calculated based on precision and recall, evaluating how well the system detects the start and end points of individual signs in continuous sequences:</p>
+      
+      <div class="formula">
+        $$\text{BSS} = \frac{2 \times P \times R}{P + R}$$
+      </div>
+      
+      <div class="definition">
+        <p>Where:</p>
+        <ul>
+            <li><strong>$P$</strong> (Precision): Measures how many predicted boundaries are correct.</li>
+            <li><strong>$R$</strong> (Recall): Measures how many actual boundaries were correctly detected.</li>
+        </ul>
+      </div>
+      
+      <p>A higher BSS indicates better temporal segmentation performance, critical for accurate continuous sign recognition.</p>
   </section>
 
   <section id="regole">
@@ -331,10 +358,11 @@
 
   <section id="contatti" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
     <h1>Contact</h2>
-      <div style="flex: 1; max-width: 100px;">
-        <h2>Contact Info</h2>
-        <p><strong>Email:</strong> emanuele.colonna@uniba.it</p>
-        <p><strong>Phone:</strong> +39 327 3768534</p>
+      <div>
+        <div style="flex: 1; max-width: 100px;">
+          <p><strong>Email:</strong> emanuele.colonna@uniba.it</p>
+          <p><strong>Phone:</strong> +39 327 3768534</p>
+        </div>
       </div>
       <form action="mailto:emanuele.colonna@uniba.it" method="post" enctype="text/plain"
         style="max-width: 600px; margin: 0 auto;">

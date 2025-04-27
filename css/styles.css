@@ -7,6 +7,19 @@ h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
+.math {
+    font-style: italic;
+}
+.formula {
+    margin: 1em 0;
+    text-align: center;
+}
+.definition {
+    margin-left: 2em;
+}
+
+
+
 /*
 h3 {
     font-size: 1.5rem;
