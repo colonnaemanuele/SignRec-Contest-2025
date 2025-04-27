@@ -105,7 +105,7 @@
             is a competition among methods for sign language recognition using
             transfer learning. For the contest, we propose the use of a novel
             training set, Sign Rec Language Dataset, completely annotated with
-            corresponding transcription and glossary. The performance of the
+            corresponding transcription. The performance of the
             competing methods will be evaluated in terms of accuracy on a private
             test set composed by images that are different from the ones available
             in the training set, in fact the objective is to transfer learning from
@@ -122,8 +122,11 @@
   <section id="dataset">
     <div style="max-width: 1400px; margin: 0 auto;">
       <h2>Dataset</h2>
-      <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px;">
-        <div style="flex: 2; min-width: 60%;">
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+        
+        <!-- Isolated Dataset Section -->
+        <div id="isolated-dataset" style="display: flex; flex-direction: column; gap: 20px;">
+          <h3>Isolated Dataset</h3>
           <p>The IsolatedLIS Dataset is a comprehensive collection of 16,856 videos featuring Italian Sign Language (LIS) signers. Each video is annotated with the following labels:</p>
           <ul>
             <li><strong>Text:</strong> The corresponding word in Italian Sign Language (LIS).</li>
@@ -131,32 +134,32 @@
             <li><strong>Gloss:</strong> The gloss of the word in Italian, generated using a semi-supervised method.</li>
             <li><strong>Frame Count:</strong> The total number of frames in the video.</li>
             <li><strong>Video Path:</strong> The file path to the video.</li>
-            <li><strong>Keypoints Path:</strong> The file pkl of keypoints extracted by SOTA human pose estimation models</li>
+            <li><strong>Keypoints Path:</strong> The file pkl of keypoints extracted by SOTA human pose estimation models.</li>
           </ul>
-          <p>Participants are provided with two folders containing isolated and continuous videos, 
-            along with a JSON file for each set that includes the labels for the samples. 
-            The dataset aims to support research in sign language recognition and encourages participants 
-            to enhance their models by incorporating additional publicly available samples or annotations.</p>
+          <p>Participants are provided with two folders containing isolated and continuous videos, along with a JSON file for each set that includes the labels for the samples. The dataset aims to support research in sign language recognition and encourages participants to enhance their models by incorporating additional publicly available samples or annotations.</p>
         </div>
-        <div style="flex: 2; min-width: 60%;">
-          <p>The Continuous LIS  Dataset is a comprehensive collection of 11 videos featuring Italian Sign Language (LIS) signers. 
-            Each video is annotated with the following labels:</p>
+  
+        <!-- Continuous Dataset Section -->
+        <div id="continuous-dataset" style="display: flex; flex-direction: column; gap: 20px;">
+          <h3>Continuous Dataset</h3>
+          <p>The Continuous LIS Dataset is a comprehensive collection of 11 videos featuring Italian Sign Language (LIS) signers. Each video is annotated with the following labels:</p>
           <ul>
             <li><strong>Text:</strong> The corresponding word in Italian Sign Language (LIS).</li>
             <li><strong>Video Path:</strong> The file path to the video.</li>
           </ul>
-          <p>Participants are provided with two folders containing isolated and continuous videos, 
-            along with a JSON file for each set that includes the labels for the samples. 
-            The dataset aims to support research in sign language recognition and encourages participants 
-            to enhance their models by incorporating additional publicly available samples or annotations.</p>
+          <p>Participants are provided with two folders containing isolated and continuous videos, along with a JSON file for each set that includes the labels for the samples. The dataset aims to support research in sign language recognition and encourages participants to enhance their models by incorporating additional publicly available samples or annotations.</p>
         </div>
-        <div style="flex: 1; min-width: 30%; display: flex; align-items: flex-start; justify-content: center;">
+  
+        <!-- Image Section -->
+        <div style="display: flex; justify-content: center; align-items: center;">
           <img src="img/train_set.png" alt="Training Dataset Examples" style="max-width: 90%; height: auto;">
         </div>
+        
       </div>
     </div>
   </section>
   <section id="protocollo">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <h2>Evaluation Protocol</h2>
       <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest 2025 employs multiple evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate different aspects of model performance.</p>
       
@@ -205,9 +208,11 @@
       </div>
       
       <p>A higher BSS indicates better temporal segmentation performance, critical for accurate continuous sign recognition.</p>
+      </div>
   </section>
 
   <section id="regole">
+    <div style="max-width: 1400px; margin: 0 auto;">
     <h2>Rules</h2>
     <ol>
       <li>
@@ -257,9 +262,11 @@
         <a href="https://drive.google.com/file/d/12-bsPJCg_NoorGSkRAJrsbx8V1L6L8Nt/view?usp=sharing">here</a>.
       </li>
     </ol>
+    </div> 
   </section>
 
   <section id="istruzioni">
+    <div style="max-width: 1400px; margin: 0 auto;">
     <h2>Instructions</h2>
     <p>The methods proposed by the participants will be executed on a private test set. To leave the participants
       totally free to use all the software libraries they prefer and to correctly reproduce their processing pipeline,
@@ -305,7 +312,9 @@
       paper describing the contest by downloading the bibtex file or as follows:
     <ul>Colonna E., ........ Online available here</ul>
     </p>
+    </div>
   </section>
+
   <section id="organizzatori" style="text-align: center; padding: 2rem;">
     <h2>Organizers</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
@@ -371,16 +380,17 @@
     </div>
   </section>
 
-  <section id="contatti" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
-    <h1>Contact</h2>
+  <section id="contatti">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
       <div>
-        <div style="flex: 1; max-width: 100px;">
+        <div style="flex: 1; max-width: 300px;">
+          <h1>Contact</h2>
           <p><strong>Email:</strong> emanuele.colonna@uniba.it</p>
           <p><strong>Phone:</strong> +39 327 3768534</p>
         </div>
       </div>
       <form action="mailto:emanuele.colonna@uniba.it" method="post" enctype="text/plain"
-        style="max-width: 600px; margin: 0 auto;">
+        style="max-width: 800px; margin: 0 auto;">
         <label for="name" style="display: block; margin-bottom: 0.5rem;">Name:</label>
         <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
 
@@ -401,6 +411,7 @@
           Send
         </button>
       </form>
+    </div>
   </section>
 
   <footer>
