@@ -163,7 +163,7 @@
   <section id="protocollo">
     <div style="max-width: 1400px; margin: 0 auto;">
       <h2>Evaluation Protocol</h2>
-      <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest 2025 employs multiple evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate different aspects of model performance.</p>
+      <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest employs multiple evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate different aspects of model performance.</p>
       
       <h3>Word Error Rate (WER)</h3>
       <p>Word Error Rate is the primary evaluation metric, quantifying the accuracy of the recognized sign sequences compared to the ground truth annotations. It is computed as:</p>
@@ -221,12 +221,12 @@
         The deadline for the submission of the methods is
         <strong>30th June, 2025</strong>. The submission must be done with an
         email in which the participants share (directly or with external
-        links) the trained model, the code, and the report. Please follow the
+        links) the trained model, the code, and a report. Please follow the
         detailed instructions reported <a href="#istruzioni">here</a>.
       </li>
       <li>
         The participants can receive the training set and the annotations by
-        sending an email to the organizer, in which they also communicate the
+        sending an email to the organizers, in which they also communicate the
         name of the team.
       </li>
       <li>
@@ -237,7 +237,7 @@
       </li>
       <li>
         The participants are free to design novel architectures or to define
-        novel training procedure and loss functions for classifiers or
+        novel training procedures and loss functions for classifiers or
         regressors.
       </li>
       <li>
@@ -276,14 +276,14 @@
       participants on the samples of our private test set.
     </p>
     <p>
-      Therefore, the partecipants must submit an archive (download an example) including the following elements:
+      Therefore, partecipants must submit an archive (download an example) including the following elements:
     </p>
     <ol>
       <ul>
-        A Python script <code>test.py</code>, which takes as inputs a json file tiwh the same format of the training
+        A Python script <code>test.py</code>, which takes as inputs a JSON file with the same format of the training
         annotations (<code>--data</code>) and the folder of the test videos (<code>--videos</code>) and procedures as
-        output a CSV file with the predicted sign for each video (<code>--results</code>). Thus, the script may be
-        executed with teh following command:
+        output a CSV file with the predicted sign for each video (<code>--results</code>). Thus, the script should be
+        executed with the following command:
         <p><code>python test.py --data foo_test.csv --videos foo_test/ --results foo_results.csv</code></p>
       </ul>
       <ul>
@@ -296,7 +296,7 @@
     </ol>
     <p>
       The provided sample <code>test.py</code> also includes the reading of the CSV file with the annotations. Each raw
-      of the file includes, separared by a comma (according to the CSV standard), the filename of the sample (e.g.
+      of the file includes, separated by a comma (according to the CSV standard), the filename of the sample (e.g.
       000001.png) and the estimated sign (e.g. 1,4,6,19,4,1,5). Therefore, an example of raw may be
       000001.png,1,4,6,19,4,1,5.
       The file of the results will be formatted exactly in the same way. The provided sample <code>test.py</code>
@@ -304,7 +304,7 @@
     </p>
     <p>The submission must be done by <a href="mailto:emanuele.colonna@uniba.it">email</a>
       . The archive file can be attached to the e-mail or shared with external
-      links. We strongly recommend to follow the example of code to prepare the submission.
+      links. We strongly recommend following the example of code to prepare the submission.
     </p>
     <p>
       The participants are strongly encouraged to submit a contest paper to <a
@@ -325,8 +325,8 @@
         <img src="img/organizers/giovanna.jpg" alt="Organizer 1" style="width: 100%; border-radius: 10px;" />
         <h3>Giovanna Castellano</h3>
         <p style="color: #666; margin: 0.1rem 0;">Full Professor</p>
-        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science (CILab)</p>
-        <p style="color: #666; margin: 0.1rem 0;">University of Study Aldo Moro Bari, Italy</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari, Aldo Moro, Italy</p>
         <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
           <a href="https://linkedin.com/in/organizer3" target="_blank">
             <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
@@ -345,8 +345,8 @@
         <img src="img/organizers/emanuele-5.jpg" alt="Organizer 2" style="width: 100%; border-radius: 10px;" />
         <h3>Emanuele Colonna</h3>
         <p style="color: #666; margin: 0.1rem 0;">PhD Student</p>
-        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science (CILab)</p>
-        <p style="color: #666; margin: 0.1rem 0;">University of Study Aldo Moro Bari, Italy</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari, Aldo Moro, Italy</p>
         <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
           <a href="https://linkedin.com/in/organizer3" target="_blank">
             <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
@@ -365,8 +365,8 @@
         <img src="img/organizers/rino-3.jpg" alt="Organizer 3" style="width: 100%; border-radius: 10px;" />
         <h3>Gennaro Vessio</h3>
         <p style="color: #666; margin: 0.1rem 0;">Dottor</p>
-        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science (CILab)</p>
-        <p style="color: #666; margin: 0.1rem 0;">University of Study Aldo Moro Bari, Italy</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari, Aldo Moro, Italy</p>
         <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
           <a href="https://linkedin.com/in/organizer3" target="_blank">
             <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
