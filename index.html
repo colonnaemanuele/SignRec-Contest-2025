@@ -282,15 +282,15 @@
       participants on the samples of our private test set.
     </p>
     <p>
-      Therefore, partecipants must submit an archive (download an example) including the following elements:
+      Therefore, partecipants must submit an archive including the following elements:
     </p>
     <ol>
       <ul>
         A Python script <code>test.py</code>, which takes as inputs a JSON file with the same format of the training
         annotations (<code>--data</code>) and the folder of the test videos (<code>--videos</code>) and procedures as
-        output a CSV file with the predicted sign for each video (<code>--results</code>). Thus, the script should be
+        output a JSON file with the predicted sign for each video. Thus, the script should be
         executed with the following command:
-        <p><code>python test.py --data foo_test.csv --videos foo_test/ --results foo_results.csv</code></p>
+        <p><code>python test.py --data foo_test.json --videos foo_test/ --results foo_results.json</code></p>
       </ul>
       <ul>
         A Google Colab Notebook <code>test.ipynb</code>, which includes the commands for installing all software
@@ -301,10 +301,8 @@
       </ul>
     </ol>
     <p>
-      The provided sample <code>test.py</code> also includes the reading of the CSV file with the annotations. Each raw
-      of the file includes, separated by a comma (according to the CSV standard), the filename of the sample (e.g.
-      000001.png) and the estimated sign (e.g. 1,4,6,19,4,1,5). Therefore, an example of raw may be
-      000001.png,1,4,6,19,4,1,5.
+      The provided sample <code>test.py</code> also includes the reading of the JSON file with the annotations. 
+      Therefore, an example of dictionary may be <code>{"video_id": "date.mp4", "predicted_signs": [1, 4, 6, 19, 5]}</code>
       The file of the results will be formatted exactly in the same way. The provided sample <code>test.py</code>
       includes the writing of the results file.
     </p>
