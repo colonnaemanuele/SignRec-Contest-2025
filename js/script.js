@@ -1,29 +1,21 @@
-// function updateGlitchText() {
-//     const glitchText = document.querySelector('.glitch-text');
-//     const originalText = "IsoSign Contest 2025";
-//     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+function sendEmail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
     
-//     let iterations = 0;
-//     const maxIterations = 3;
+    // Form validation
+    if (!name || !email || !message) {
+      alert('Please fill in all required fields');
+      return;
+    }
     
-//     const interval = setInterval(() => {
-//         glitchText.innerText = originalText
-//             .split("")
-//             .map((letter, index) => {
-//                 if (index < iterations) {
-//                     return originalText[index];
-//                 }
-//                 return chars[Math.floor(Math.random() * chars.length)];
-//             })
-//             .join("");
-        
-//         iterations += 1/3;
-        
-//         if (iterations >= originalText.length) {
-//             clearInterval(interval);
-//             setTimeout(updateGlitchText, 4000);
-//         }
-//     }, 100);
-// }
-
-// document.addEventListener('DOMContentLoaded', updateGlitchText);
+    // Format the body of the email
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    
+    // Create mailto link with primary recipient, CC, subject and body
+    const mailtoLink = `mailto:emanuele.colonna@uniba.it?cc=giovanna.castellano@uniba.it,gennaro.vessio@uniba.it&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client with the formatted email
+    window.location.href = mailtoLink;
+  }

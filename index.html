@@ -211,6 +211,10 @@
       
       <p>A higher BSS indicates better temporal segmentation performance, critical for accurate continuous sign recognition.</p>
       </div>
+      <div style="text-align: center; margin-top: 20px; font-size: 1.5rem;">
+        <strong>The method with the lowest Word Error Rate (WER) will be declared the winner of the PAR 2025 Contest</strong>
+      </div>
+
   </section>
 
   <section id="regole">
@@ -246,6 +250,11 @@
         <a href="#istruzioni">here</a>.
       </li>
       <li>
+        Participants must produce a brief PDF report of the proposed method,
+        by following a template that can be downloaded
+        <a href="https://unibari-my.sharepoint.com/:b:/g/personal/emanuele_colonna_uniba_it/EQp115J1WZxItJY52BHX4w4BbPcmlx_825WRgw6zHclj1Q?e=9EaJuB">here</a>.
+      </li>
+      <li>
         The participants are strongly encouraged to submit a contest paper to
         <a href="https://caip2025.com/call-for-papers/">CAIP 2025</a>, whose
         deadline is 10th July, 2025. The contest paper must be also sent by
@@ -255,13 +264,8 @@
         <a
           href="https://docs.google.com/document/d/1LEnYuY24BE_vJrb_AqgCJwgUlV68xfY5vFi9K5ykxBo/edit?usp=sharing">here</a>.
         If you submit a paper, you can cite the paper describing the
-        contest by downloading the <a href="">bibtex file</a> or as follows: [Citazione
-        paper]
-      </li>
-      <li>
-        Participants must produce a brief PDF report of the proposed method,
-        by following a template that can be downloaded
-        <a href="https://unibari-my.sharepoint.com/:b:/g/personal/emanuele_colonna_uniba_it/EQp115J1WZxItJY52BHX4w4BbPcmlx_825WRgw6zHclj1Q?e=9EaJuB">here</a>.
+        contest by downloading the <a href="">bibtex file</a> or as follows:
+          <ul><strong>Colonna E., Gennaro V., Giovanna C., <em>"SignRec Contest 2025: Knowledge Transfer from Isolated to Continuous Sign Language"</em>, 21st International Conference Computer Analysis of Images and Patterns, CAIP 2025</strong></ul>
       </li>
     </ol>
     </div> 
@@ -302,14 +306,13 @@
       The file of the results will be formatted exactly in the same way. The provided sample <code>test.py</code>
       includes the writing of the results file.
     </p>
-    <p>The submission must be done by <a href="mailto:emanuele.colonna@uniba.it">email</a>
-      . The archive file can be attached to the e-mail or shared with external
+    <p>The submission must be done by email. The archive file can be attached to the e-mail or shared with external
       links. We strongly recommend following the example of code to prepare the submission.
     </p>
     <p>
       The participants are strongly encouraged to submit a contest paper to <a
         href="https://caip2025.com/call-for-papers/">CAIP 2025</a>, whose deadline is 10th July,
-      2025. The contest paper must be also sent by <a href="mailto:emanuele.colonna@uniba.it">email</a> to the
+      2025. The contest paper must be also sent by email to the
       organizers. If you submit a paper, you can cite the
       paper describing the contest by downloading the bibtex file or as follows:
     <ul><strong>Colonna E., Gennaro V., Giovanna C., <em>"SignRec Contest 2025: Knowledge Transfer from Isolated to Continuous Sign Language"</em>, 21st International Conference Computer Analysis of Images and Patterns, CAIP 2025</strong></ul>
@@ -404,10 +407,11 @@
           </div>
   
           <div style="text-align: right;">
-            <button type="submit"
+            <button type="button"
               style="background-color: #333; color: #fff; padding: 0.8rem 2rem; border: none; border-radius: 5px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;"
               onmouseover="this.style.backgroundColor='#555'" 
-              onmouseout="this.style.backgroundColor='#333'">
+              onmouseout="this.style.backgroundColor='#333'"
+              onclick="sendEmail()">
               Send Message
             </button>
           </div>
