@@ -146,7 +146,7 @@
           <h3>Continuous Dataset</h3>
           <p>The Continuous LIS Dataset is a comprehensive collection of 11 videos featuring Italian Sign Language (LIS) signers. Each video is annotated with the following labels:</p>
           <ul>
-            <li><strong>Text:</strong> The corresponding word in Italian Sign Language (LIS).</li>
+            <li><strong>CSV Transcription Path:</strong>The corresponding file to the transcription text.</li>
             <li><strong>Video Path:</strong> The file path to the video.</li>
           </ul>
           <p>Participants are provided with two folders containing isolated and continuous videos, along with a JSON file for each set that includes the labels for the samples. The dataset aims to support research in sign language recognition and encourages participants to enhance their models by incorporating additional publicly available samples or annotations.</p>
@@ -280,11 +280,11 @@
     </p>
     <ol>
       <ul>
-        A Python script, designated as <code>test.py</code>, is utilized to process training annotations, which are formatted in a specific manner. 
-        The script takes as inputs the training annotations, denoted as <code>--data</code>, and the folder containing the test videos, 
-        referred to as <code>--videos</code>. Additionally, it processes the procedures and generates a JSON file that contains the predicted sign for each video. 
+        A Python script, designated as <code>test.py</code>, is utilized to process annotations, which are stored in CSV format. 
+        The script takes as inputs the annotations folder, denoted as <code>--data</code>, and the folder containing the test videos, 
+        referred to as <code>--videos</code>. Additionally, it processes the procedures and generates a CSV file that contains the predicted sign for each video.
         Therefore, the execution of the script should be carried out in accordance with the following command:
-        <p><code>python test.py --data foo_test.json --videos foo_test/ --results foo_results.json</code></p>
+        <p><code>python test.py --data foo_test/ --videos foo_test/ --results foo_results.csv</code></p>
       </ul>
       <ul>
         A Google Colab Notebook <code>test.ipynb</code>, which includes the commands for installing all software
