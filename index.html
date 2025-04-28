@@ -144,7 +144,7 @@
         <!-- Continuous Dataset Section -->
         <div id="continuous-dataset" style="display: flex; flex-direction: column;">
           <h3>Continuous Dataset</h3>
-          <p>The Continuous LIS Dataset is a comprehensive collection of 10 videos featuring Italian Sign Language (LIS) signers. Each video is annotated with the following labels:</p>
+          <p>The Continuous LIS Dataset is a comprehensive of Italian Sign Language (LIS) signers. Each video is annotated with the following labels:</p>
           <ul>
             <li><strong>CSV Transcription Path:</strong>The corresponding file to the transcription text.</li>
             <li><strong>Video Path:</strong> The file path to the video.</li>
@@ -268,8 +268,9 @@
   <section id="istruzioni">
     <div style="max-width: 1400px; margin: 0 auto;">
     <h2>Instructions</h2>
-    <p>The methods proposed by the participants will be executed on a private test set. To leave the participants
-      totally free to use all the software libraries they prefer and to correctly reproduce their processing pipeline,
+    <p>The methods proposed will be executed on a private test set not made available to the participants. In this way, 
+      the evaluation is entirely fair and we ensure that there is no overlap between the training and the test samples.
+      To leave the participants totally free to use all the software libraries they prefer and to correctly reproduce their processing pipeline,
       the evaluation will be done on <a href="http://colab.research.google.com">Google Colab</a> 
       (<a href="https://www.tutorialspoint.com/google_colab/index.htm" target="_blank">follow this tutorial</a>) 
       by running the code submitted by the
@@ -282,9 +283,9 @@
       <ul>
         A Python script, designated as <code>test.py</code>, is utilized to process annotations, which are stored in CSV format. 
         The script takes as inputs the annotations folder, denoted as <code>--data</code>, and the folder containing the test videos, 
-        referred to as <code>--videos</code>. Additionally, it processes the procedures and generates a CSV file that contains the predicted sign for each video.
+        referred to as <code>--video</code>. Additionally, it processes the procedures and generates a CSV file that contains the predicted sign for each video.
         Therefore, the execution of the script should be carried out in accordance with the following command:
-        <p><code>python test.py --data foo_test/ --videos foo_test/ --results foo_results.csv</code></p>
+        <p><code>python test.py --data foo_test/ --video foo_test/ --results foo_results.csv</code></p>
       </ul>
       <ul>
         A Google Colab Notebook <code>test.ipynb</code>, which includes the commands for installing all software
