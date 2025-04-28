@@ -280,28 +280,28 @@
     </p>
     <ol>
       <ul>
-        A Python script <code>test.py</code>, which takes as inputs with the same format of the training
-        annotations (<code>--data</code>) and the folder of the test videos (<code>--videos</code>) and procedures as
-        output a JSON file with the predicted sign for each video. Thus, the script should be
-        executed with the following command:
+        A Python script, designated as <code>test.py</code>, is utilized to process training annotations, which are formatted in a specific manner. 
+        The script takes as inputs the training annotations, denoted as <code>--data</code>, and the folder containing the test videos, 
+        referred to as <code>--videos</code>. Additionally, it processes the procedures and generates a JSON file that contains the predicted sign for each video. 
+        Therefore, the execution of the script should be carried out in accordance with the following command:
         <p><code>python test.py --data foo_test.json --videos foo_test/ --results foo_results.json</code></p>
       </ul>
       <ul>
         A Google Colab Notebook <code>test.ipynb</code>, which includes the commands for installing all software
-        requirements and executes the scripts <code>test.py</code>
+        requirements and executes the script <code>test.py</code>
       </ul>
       <ul>
         All the files necessary for running the test, namely the training model, additional scripts and so on.
       </ul>
     </ol>
     <p>
-      The provided sample <code>test.py</code> also includes the reading of the JSON file with the annotations. 
+      The provided sample <code>test.py</code> should also includes the reading of the JSON file with the annotations. 
       Therefore, an example of dictionary may be <code>{"video_id": "date.mp4", "predicted_signs": [1, 4, 6, 19, 5]}</code>
       The file of the results will be formatted exactly in the same way. The provided sample <code>test.py</code>
       includes the writing of the results file.
     </p>
     <p>The submission must be done by email. The archive file can be attached to the e-mail or shared with external
-      links. We strongly recommend following the example of code to prepare the submission.
+      links.
     </p>
     <p>
       The participants are strongly encouraged to submit a contest paper to <a
