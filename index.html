@@ -189,28 +189,20 @@
       <p>Sign Accuracy measures the percentage of correctly predicted signs within a sequence, providing a complementary metric to WER. It is defined as:</p>
       
       <div class="formula">
-        $$\text{SA} = \frac{C}{N} \times 100\%$$
+        $$SA= \frac{LCS(P,G)}{N} \times 100,$$
       </div>
-      
-      <p>Here, <strong>$C$</strong> represents the number of correctly predicted signs. Unlike WER, SA does not penalize insertions, making it helpful in evaluating raw recognition accuracy.</p>
-      
-      <h3>Boundary Segmentation Score (BSS)</h3>
-      <p>To assess the ability of models to segment continuous signing into discrete glosses, we introduce the Boundary Segmentation Score (BSS), which measures the alignment of predicted sign boundaries with ground truth annotations. It is calculated based on precision and recall, evaluating how well the system detects the start and end points of individual signs in continuous sequences:</p>
-      
-      <div class="formula">
-        $$\text{BSS} = \frac{2 \times P \times R}{P + R}$$
-      </div>
-      
       <div class="definition">
         <p>Where:</p>
         <ul>
-            <li><strong>$P$</strong> (Precision): Measures how many predicted boundaries are correct.</li>
-            <li><strong>$R$</strong> (Recall): Measures how many actual boundaries were correctly detected.</li>
+            <li><strong>$P$</strong>: Predicted sequence of signs;</li>
+            <li><strong>$G$</strong>: Ground truth sequence of signs;</li>
+            <li><strong>$LCS(P,G)$</strong>: Length of the Longest Common Subsequence between $P$ and $G$;</li>
+            <li><strong>$N$</strong>: Total number of signs in the ground truth sequence.</li>
         </ul>
       </div>
-      
-      <p>A higher BSS indicates better temporal segmentation performance, critical for accurate continuous sign recognition.</p>
-      </div>
+      <p>
+        Unlike the Word Error Rate (WER), SA does not penalize insertions. This makes it particularly useful for evaluating raw recognition accuracy in sign language tasks.
+      </p>
       <div style="text-align: center; margin-top: 20px; font-size: 1.5rem;">
         <strong>The method with the lowest Word Error Rate (WER) will be declared the winner of the SignRec 2025 Contest</strong>
       </div>
