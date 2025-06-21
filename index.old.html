@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignRec Contest CAIP 2025</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="caip_icon.png" type="image/png">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        displayAlign: "center"
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML" async></script>
+
+</head>
+
+<body>
+  <div id="frontespizio">
+    <div style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 1.5rem;
+        ">
+      <a href="https://www.uniba.it/it" target="_blank">
+        <img src="img/loghi/uniba/uniba_logo_w.svg" alt="Logo UNIBA" style="height: 100px" /></a>
+      <a href="https://cilab.di.uniba.it" target="_blank">
+        <img src="img/loghi/cilab/cilab_logo_w.svg" alt="Logo CILAB" style="height: 100px" /></a>
+      <a href="https://caip2025.com" target="_blank">
+        <img src="img/loghi/caip/LOGO-CAIP-2025.png" alt="Logo CAIP" style="height: 50px" /></a>
+    </div>
+    <h1 class="glitch-text" data-text="SignRec Contest 2025">
+      SignRec Contest 2025
+    </h1>
+    <h2 style="color: #fff; font-size: 1.5rem; margin-top: 1rem">
+      21st International Conference on Computer Analysis of Images and Patterns - CAIP 2025
+    </h2>
+    <p style="
+          color: #ccc;
+          font-size: 1rem;
+          max-width: 600px;
+          text-align: center;
+          margin: 1rem auto;
+        ">
+      22-25 September 2025, Las Palmas de Gran Canaria, Spain
+    </p>
+  </div>
+  <header style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #333;
+        color: #fff;
+        padding: 1rem;
+      ">
+    <h1 style="margin: 0">SignRec Contest 2025</h1>
+    <nav>
+      <ul style="list-style: none; display: flex; margin: 0; padding: 0">
+        <li style="margin-right: 10px">
+          <a href="#contest" style="color: #fff; text-decoration: none">Contest</a>
+        </li>
+        <li style="margin-right: 10px">
+          <a href="#dataset" style="color: #fff; text-decoration: none">Dataset</a>
+        </li>
+        <li style="margin-right: 10px">
+          <a href="#protocollo" style="color: #fff; text-decoration: none">Evaluation protocol</a>
+        </li>
+        <li style="margin-right: 10px">
+          <a href="#regole" style="color: #fff; text-decoration: none">Rules</a>
+        </li>
+        <li style="margin-right: 10px">
+          <a href="#istruzioni" style="color: #fff; text-decoration: none">Instructions</a>
+        </li>
+        <li style="margin-right: 10px">
+          <a href="#organizzatori" style="color: #fff; text-decoration: none">Organizers</a>
+        </li>
+        <li>
+          <a href="#contatti" style="color: #fff; text-decoration: none">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="contest">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2>Contest</h2>
+      <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px; height: fit-content;">
+        <div style="flex: 1; min-width: 60%;">
+          <p>
+            Sign language recognition represents a formidable challenge in computer
+            vision due to the complex spatiotemporal dynamics of gestures and the
+            need for precise segmentation in continuous video streams. Many current
+            methods struggle with reliably partitioning continuous signing into
+            individual glosses or mapping these segments into text. In this contest,
+            participants will leverage a novel isolated Italian Sign Language
+            dataset to train robust models. In isolated sign language recognition,
+            each sign is presented individually, without context, similar to
+            flashcards used for learning new words in spoken language. In contrast,
+            continuous sign language recognition mirrors real-life communication,
+            where signs transition seamlessly from one to the next, forming
+            structured expressions much like spoken sentences. The SignRec Contest is a competition
+            among methods for sign language recognition using knowledge transfer.
+            For the contest, we propose the use of a novel training set completely annotated with
+            corresponding transcription and glossary.
+            The performance of the competing methods will be evaluated in terms of accuracy
+            on a private test set composed of images that are different from the ones
+            available in the training set; in fact, the objective is to transfer learning from
+            isolated training data to continuous test data.
+          </p>
+        </div>
+        <div style="flex: 1; min-width: 30%; display: flex; align-items: flex-start; justify-content: center;">
+          <img src="img/test_grid.png" alt="Test Dataset Example" style="width: 75%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dataset">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2>Dataset</h2>
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+
+        <!-- Isolated Dataset Section -->
+        <div id="isolated-dataset" style="display: flex; flex-direction: column;">
+          <h3>Isolated Dataset</h3>
+          <p>The traning set is a comprehensive collection of 14,184 videos featuring Italian Sign Language (LIS)
+            signers. Each video is annotated with the following labels:</p>
+          <ul>
+            <li><strong>Text:</strong> The corresponding word in Italian Sign Language (LIS).</li>
+            <li><strong>Category:</strong> The semantic category of the word (e.g., sports, language, baby signs, etc.).
+            </li>
+            <li><strong>Gloss:</strong> The gloss of the word in Italian, generated using a semi-supervised method.</li>
+            <li><strong>Frame Count:</strong> The total number of frames in the video.</li>
+            <li><strong>Video Path:</strong> The file path to the video.</li>
+            <li><strong>Keypoints Path:</strong> The file pkl of keypoints extracted by SOTA human pose estimation
+              models.</li>
+          </ul>
+          <p>Participants are provided with two folders containing isolated and continuous videos,
+            along with a JSON file for each set that includes the labels for the samples.
+            The dataset aims to support research in sign language recognition and encourages participants
+            to enhance their models by incorporating additional publicly available samples or annotations.</p>
+        </div>
+
+        <!-- Continuous Dataset Section -->
+        <div id="continuous-dataset" style="display: flex; flex-direction: column;">
+          <h3>Continuous Dataset</h3>
+          <p>The Continuous LIS Dataset is a comprehensive of Italian Sign Language (LIS) signers. Each video is
+            annotated with the following labels:</p>
+          <ul>
+            <li><strong>CSV Transcription Path:</strong>The corresponding file to the transcription text.</li>
+            <li><strong>Video Path:</strong> The file path to the video.</li>
+          </ul>
+          <p>Participants are provided with two folders containing isolated and continuous videos, along with a JSON
+            file for each set that includes the labels for the samples. The dataset aims to support research in sign
+            language recognition and encourages participants to enhance their models by incorporating additional
+            publicly available samples or annotations.</p>
+        </div>
+
+        <!-- Image Section -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img src="img/train_set.png" alt="Training Dataset Examples" style="max-width: 90%; height: auto;">
+        </div>
+
+      </div>
+      <p>The test set is partially public and made available to participants for a limited time window of 2 hours,
+        allowing them to validate and try out their models. This public portion serves as a preview to help fine-tune
+        and debug systems under competition conditions. The complete test set, however, remains private and is used for
+        final evaluation to ensure fairness.</p>
+    </div>
+  </section>
+  <section id="protocollo">
+    <div>
+      <h2>Evaluation Protocol</h2>
+      <p>To ensure a fair and rigorous assessment of the submitted models, the SignRec Contest employs multiple
+        evaluation metrics, primarily focusing on Word Error Rate (WER), a standard measure for sequence-based
+        recognition tasks. Sign Accuracy (SA) and Boundary Segmentation Score (BSS) are also introduced to evaluate
+        different aspects of model performance.</p>
+
+      <h3>Word Error Rate (WER)</h3>
+      <p>Word Error Rate is the primary evaluation metric, quantifying the accuracy of the recognized sign sequences
+        compared to the ground truth annotations. It is computed as:</p>
+
+      <div class="formula">
+        $$\text{WER} = \frac{S + D + I}{N} = \frac{S + D + I}{S + D + C}$$
+      </div>
+
+      <div class="definition">
+        <p>Where:</p>
+        <ul>
+          <li><strong>$S$</strong>: Number of substitutions (incorrectly recognized signs).</li>
+          <li><strong>$D$</strong>: Number of deletions (missed signs).</li>
+          <li><strong>$I$</strong>: Number of insertions (extra signs detected).</li>
+          <li><strong>$C$</strong>: Number of correctly recognized signs.</li>
+          <li><strong>$N$</strong>: Total number of signs in the ground truth sentence ($N = S + D + C$).</li>
+        </ul>
+      </div>
+
+      <p>Lower WER values indicate better recognition performance, as fewer errors are introduced in the predicted sign
+        sequences.</p>
+
+      <h3>Sign Accuracy (SA)</h3>
+      <p>Sign Accuracy measures the percentage of correctly predicted signs within a sequence, providing a complementary
+        metric to WER. It is defined as:</p>
+
+      <div class="formula">
+        $$SA= \frac{LCS(P,G)}{N} \times 100,$$
+      </div>
+      <div class="definition">
+        <p>Where:</p>
+        <ul>
+          <li><strong>$P$</strong>: Predicted sequence of signs;</li>
+          <li><strong>$G$</strong>: Ground truth sequence of signs;</li>
+          <li><strong>$LCS(P,G)$</strong>: Length of the Longest Common Subsequence between $P$ and $G$;</li>
+          <li><strong>$N$</strong>: Total number of signs in the ground truth sequence.</li>
+        </ul>
+      </div>
+      <p>
+        Unlike the Word Error Rate (WER), SA does not penalize insertions. This makes it particularly useful for
+        evaluating raw recognition accuracy in sign language tasks.
+      </p>
+      <div style="text-align: center; margin-top: 20px; font-size: 1.5rem;">
+        <strong>The method with the lowest Word Error Rate (WER) will be declared the winner of the SignRec 2025
+          Contest</strong>
+      </div>
+
+  </section>
+
+  <section id="regole">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2>Rules</h2>
+      <ol>
+        <li>
+          The deadline for the submission of the methods is
+          <strong>15th June, 2025</strong>. The submission must be done with an
+          email in which the participants share (directly or with external
+          links) the trained model, the code, and a report. Please follow the
+          detailed instructions reported <a href="#istruzioni">here</a>.
+        </li>
+        <li>
+          The participants can receive the training set and the annotations by
+          sending an email to the organizers, in which they also communicate the
+          name of the team.
+        </li>
+        <li>
+          The participants can use these training samples and annotations, but they can also use additional samples
+          and/or add the
+          missing labels, under the constraint that they make the additional
+          samples and annotations publicly available.
+        </li>
+        <li>
+          The participants are free to design novel architectures or to define
+          novel training procedures and loss functions for classifiers or
+          regressors.
+        </li>
+        <li>
+          Participants must produce a brief PDF report of the proposed method,
+          by following a template that can be downloaded
+          <a
+            href="https://unibari-my.sharepoint.com/:b:/g/personal/emanuele_colonna_uniba_it/EQp115J1WZxItJY52BHX4w4BbPcmlx_825WRgw6zHclj1Q?e=9EaJuB">here</a>.
+        </li>
+        <li>
+          The participants are strongly encouraged to submit a contest paper to
+          <a href="https://caip2025.com/call-for-papers/">CAIP 2025</a>, whose
+          deadline is 10th July, 2025. The contest paper must be also sent by
+          email to the organizers. Otherwise, the participants must produce a
+          brief PDF report of the proposed method, by following a template that
+          can be downloaded
+          <a
+            href="https://docs.google.com/document/d/1LEnYuY24BE_vJrb_AqgCJwgUlV68xfY5vFi9K5ykxBo/edit?usp=sharing">here</a>.
+          If you submit a paper, you can cite the paper describing the
+          contest by downloading thebibtex file or as follows:
+          <ul><strong>Colonna E., Vessio Gnnaro V., Giovanna C., <em>"SignRec Contest 2025: Knowledge Transfer from
+                Isolated to Continuous Sign Language"</em>, 21st International Conference Computer Analysis of Images
+              and Patterns, CAIP 2025</strong></ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="istruzioni">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2>Instructions</h2>
+      <p>The methods proposed will be executed on a private test set not made available to the participants. In this
+        way,
+        the evaluation is entirely fair and we ensure that there is no overlap between the training and the test
+        samples.
+        To leave the participants totally free to use all the software libraries they prefer and to correctly reproduce
+        their processing pipeline,
+        the evaluation will be done on <a href="http://colab.research.google.com">Google Colab</a>
+        (<a href="https://www.tutorialspoint.com/google_colab/index.htm" target="_blank">follow this tutorial</a>)
+        by running the code submitted by the
+        participants on the samples of our private test set.
+      </p>
+      <p>
+        Therefore, partecipants must submit an archive including the following elements:
+      </p>
+      <ol>
+        <ul>
+          A Python script, designated as <code>test.py</code>, is utilized to process annotations, which are stored in
+          CSV format.
+          The script takes as inputs the annotations folder, denoted as <code>--data</code>, and the folder containing
+          the test videos,
+          referred to as <code>--video</code>. Additionally, it processes the procedures and generates a CSV file that
+          contains the predicted sign for each video.
+          Therefore, the execution of the script should be carried out in accordance with the following command:
+          <p><code>python test.py --data foo_test/ --video foo_test/ --results foo_results.csv</code></p>
+        </ul>
+        <ul>
+          A Google Colab Notebook <code>test.ipynb</code>, which includes the commands for installing all software
+          requirements and executes the script <code>test.py</code>
+        </ul>
+        <ul>
+          <p><strong>All the files necessary for running the test, namely the training model, additional scripts and so
+              on.</strong></p>
+        </ul>
+      </ol>
+      <p>
+        The <code>test.py</code> script should be implemented to include the reading of the annotations JSON file and
+        the creation of a file containing all the obtained results.
+        An example of a dictionary from the JSON file might be:
+        <code>{"video_id": "date.mp4", "predicted_signs": [1, 4, 6, 19, 5]}</code>.
+        The results file will be formatted in the same manner as the original annotation file.
+      </p>
+      <p>The submission must be done by email. The archive file can be attached to the e-mail or shared with external
+        links.
+      </p>
+      <p>
+        The participants are strongly encouraged to submit a contest paper to <a
+          href="https://caip2025.com/call-for-papers/">CAIP 2025</a>, whose deadline is 10th July,
+        2025. The contest paper must be also sent by email to the
+        organizers. If you submit a paper, you can cite the
+        paper describing the contest by downloading the bibtex file or as follows:
+      <ul><strong>Colonna E., Vessio G., Castellano G., <em>"SignRec Contest 2025: Knowledge Transfer from Isolated to
+            Continuous Sign Language"</em>, 21st International Conference on Computer Analysis of Images and Patterns,
+          CAIP 2025</strong></ul>
+      </p>
+    </div>
+  </section>
+
+  <section id="organizzatori" style="text-align: center; padding: 2rem;">
+    <h2>Organizers</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <div style="max-width: 300px; text-align: center;">
+        <img src="img/organizers/emanuele-5.jpg" alt="Organizer 1" style="width: 100%; border-radius: 10px;" />
+        <h3 style="margin: 0.5rem !important;"><a href="https://colonnaemanuele.github.io" target="_blank"
+            style="color: black; text-decoration: none;">Emanuele Colonna</a></h3>
+        <hr style="width: 50%; margin: 0.5rem auto; border: none; height: 1px; background-color: black;">
+        <p style="color: #666; margin: 0.1rem 0;">PhD Student</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari Aldo Moro, Italy</p>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+          <a href="https://www.linkedin.com/in/emanuele-colonna-60b876225/" target="_blank">
+            <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
+          </a>
+          <a href="https://scholar.google.com/citations?user=AQk15FYAAAAJ&hl=en" target="_blank">
+            <img src="img/social/gscholar.png" alt="Google Scholar" style="width: 20px;" />
+          </a>
+        </div>
+      </div>
+      <div style="max-width: 300px; text-align: center;">
+        <img src="img/organizers/rino-3.jpg" alt="Organizer 2" style="width: 100%; border-radius: 10px;" />
+        <h3 style="margin: 0.5rem !important;"><a href="https://www.gennarovessio.com" target="_blank"
+            style="color: black; text-decoration: none;">Gennaro Vessio</a></h3>
+        <hr style="width: 50%; margin: 0.5rem auto; border: none; height: 1px; background-color: black;">
+        <p style="color: #666; margin: 0.1rem 0;">Assistant Professor</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari Aldo Moro, Italy</p>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+          <a href="https://www.linkedin.com/in/gennaro-vessio/" target="_blank">
+            <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
+          </a>
+          <a href="https://scholar.google.com/citations?hl=en&user=KyQe9EgAAAAJ" target="_blank">
+            <img src="img/social/gscholar.png" alt="Google Scholar" style="width: 20px;" />
+          </a>
+        </div>
+      </div>
+      <div style="max-width: 300px; text-align: center;">
+        <img src="img/organizers/giovanna.jpg" alt="Organizer 3" style="width: 100%; border-radius: 10px;" />
+        <h3 style="margin: 0.5rem !important;"><a
+            href="https://sites.google.com/site/cilabuniba/people/giovanna-castellano" target="_blank"
+            style="color: black; text-decoration: none;">Giovanna Castellano</a></h3>
+        <hr style="width: 50%; margin: 0.5rem auto; border: none; height: 1px; background-color: black;">
+        <p style="color: #666; margin: 0.1rem 0;">Full Professor</p>
+        <p style="color: #666; margin: 0.1rem 0;">Department of Computer Science</p>
+        <p style="color: #666; margin: 0.1rem 0;">University of Bari Aldo Moro, Italy</p>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+          <a href="https://www.linkedin.com/in/giovanna-castellano-61846822/" target="_blank">
+            <img src="img/social/linkedin.png" alt="LinkedIn" style="width: 20px;" />
+          </a>
+          <a href="https://scholar.google.com/citations?user=MN7Vp5sAAAAJ&hl=en&oi=ao" target="_blank">
+            <img src="img/social/gscholar.png" alt="Google Scholar" style="width: 20px;" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+      <h2>Contact</h2>
+      <div
+        style="max-width: 800px; margin: 2rem auto; background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 30px;">
+        <form action="mailto:emanuele.colonna@uniba.it" method="post" enctype="text/plain">
+          <div style="margin-bottom: 1.5rem;">
+            <label for="name"
+              style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Name:</label>
+            <input type="text" id="name" name="name" required
+              style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s ease;"
+              onFocus="this.style.borderColor='#777'; this.style.outline='none'"
+              onBlur="this.style.borderColor='#ddd'" />
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="email"
+              style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Email:</label>
+            <input type="email" id="email" name="email" required
+              style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s ease;"
+              onFocus="this.style.borderColor='#777'; this.style.outline='none'"
+              onBlur="this.style.borderColor='#ddd'" />
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="subject"
+              style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Subject:</label>
+            <input type="text" id="subject" name="subject" value="SignRec Contest 2025" readonly
+              style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; background-color: #f2f2f2; cursor: not-allowed;" />
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="message"
+              style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Message:</label>
+            <textarea id="message" name="message" rows="6" required
+              style="width: 100%; padding: 0.8rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s ease; resize: vertical;"
+              onFocus="this.style.borderColor='#777'; this.style.outline='none'"
+              onBlur="this.style.borderColor='#ddd'"></textarea>
+          </div>
+
+          <div style="text-align: right;">
+            <button type="button"
+              style="background-color: #333; color: #fff; padding: 0.8rem 2rem; border: none; border-radius: 5px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;"
+              onmouseover="this.style.backgroundColor='#555'" onmouseout="this.style.backgroundColor='#333'"
+              onclick="sendEmail()">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; SignRec Contest 2025. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
